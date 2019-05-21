@@ -1,0 +1,16 @@
+<h1>My awesome Tasklist</h1>
+<ul class="list-unstyled">
+<% @tasks.each do |task| %>
+    <li>
+      <p>
+        <input type="checkbox" name="completed" <%= task.completed ? 'checked' : '' %> disabled>
+        <%= link_to task.title, task_path(task['id']) %>
+        <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="far fa-trash-alt"></i>
+          <% end %>
+      </p>
+    </li>
+<% end %>
+</ul>
+
+<i class="fas fa-plus-circle"> </i><%= link_to "Add a new task", new_path %>

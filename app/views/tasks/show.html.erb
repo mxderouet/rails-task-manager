@@ -1,0 +1,7 @@
+<h1><%= @task.title %></h1>
+<button class="btn-secondart">
+    <%= link_to "Edit task", edit_path(@task) %>
+</button>
+<p><%= @task.details %></p>
+<input type="checkbox" name="completed">
+<%= link_to "Back to Tasklist", tasks_path %>
